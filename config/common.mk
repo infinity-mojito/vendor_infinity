@@ -189,6 +189,10 @@ PRODUCT_PACKAGES += \
 # Relax Broken Library Check
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 
+# BtHelper
+PRODUCT_PACKAGES += \
+    BtHelper
+
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
