@@ -14,8 +14,8 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Infinity OTA update package
 
+# Infinity OTA update package
 INFINITY_TARGET_PACKAGE := $(PRODUCT_OUT)/$(INFINITY_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
