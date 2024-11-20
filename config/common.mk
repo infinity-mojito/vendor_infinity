@@ -176,6 +176,12 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
     
+ifeq ($(TARGET_SHIPS_FULL_GAPPS),true)
+ifneq ($(WITH_GAPPS),true)
+$(warning TARGET_SHIPS_FULL_GAPPS is declared without declaration of WITH_GAPPS to true, hence it will create no impact)
+endif
+endif
+
 ifeq ($(TARGET_BUILD_GOOGLE_TELEPHONY),true)
 ifneq ($(WITH_GAPPS),true)
 $(warning TARGET_BUILD_GOOGLE_TELEPHONY is declared without declaration of WITH_GAPPS to true, hence it will create no impact)
