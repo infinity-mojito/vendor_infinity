@@ -22,14 +22,14 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INFINITY_TARGET_PACKAGE)
+	$(hide) mv -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INFINITY_TARGET_PACKAGE)
 	$(hide) ./vendor/infinity/build/tools/generate_ota_info.sh $(INFINITY_TARGET_PACKAGE)
 	echo -e ${CL_BLD}${CL_RED}"===============================-Compiling complete-==============================="${CL_RED}
 	echo -e ${CL_BLD}${CL_GRN}"Get your Compiled ROM Package from: "${CL_RED} $(INFINITY_TARGET_PACKAGE)${CL_RST}
-        echo " "
+	echo ""
 	echo -e ${CL_BLD}${CL_GRN}"Get your Compiled ROM Package's ota json from: "${CL_RED} $(INFINITY_TARGET_PACKAGE).json${CL_RST}
 	echo ""
-        echo ""
-        echo -e ${CL_BLD}${CL_RED}"                    Thanks for trying out Project Infinity X ❤️"${CL_RED}
-        echo ""
+	echo ""
+	echo -e ${CL_BLD}${CL_RED}"                    Thanks for trying out Project Infinity X ❤️"${CL_RED}
+	echo ""
 	echo -e ${CL_BLD}${CL_RED}"================================================================================"${CL_RED}
