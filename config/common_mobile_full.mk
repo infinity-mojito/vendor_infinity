@@ -1,19 +1,7 @@
-# Inherit common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_mobile.mk)
+# Inherit common Infinity stuff
+$(call inherit-product, vendor/infinity/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
-
-# Include {Lato,Rubik} fonts
-$(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
-$(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
-
-# Apps
-PRODUCT_PACKAGES += \
-    Eleven \
-    Etar \
-    Profiles \
-    Recorder \
-    Seedvault
 
 ifneq ($(PRODUCT_NO_CAMERA),true)
 PRODUCT_PACKAGES += \
@@ -30,12 +18,6 @@ PRODUCT_PACKAGES += \
     unrar \
     zstd
 
-# Fonts
-PRODUCT_PACKAGES += \
-    fonts_customization.xml \
-    FontLatoOverlay \
-    FontRubikOverlay
-
-# Include Lineage LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/dictionaries
+# Include Infinity LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/infinity/overlay/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/infinity/overlay/dictionaries

@@ -1,6 +1,8 @@
-# GMS
-ifeq ($(WITH_GMS),true)
-WITH_GMS_COMMS_SUITE := true
+# BCR
+ifeq ($(WITH_GAPPS),true)
+ifeq ($(TARGET_BUILD_GOOGLE_TELEPHONY),true)
+$(call inherit-product, vendor/bcr/bcr.mk)
+endif
 endif
 
 # Sensitive Phone Numbers list
@@ -15,10 +17,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     messaging \
     Stk
-
-# Default ringtone
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=Orion.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
