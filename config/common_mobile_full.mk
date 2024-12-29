@@ -8,7 +8,7 @@ PRODUCT_PACKAGES += \
     Aperture
 endif
 
-ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
+ifeq ($(TARGET_SHIPS_AUDIOFX),true)
 PRODUCT_PACKAGES += \
     AudioFX
 endif
